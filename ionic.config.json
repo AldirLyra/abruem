@@ -1,0 +1,8 @@
+{
+  "name": "Abruem",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite",
+  "id": "dccc978f"
+}
