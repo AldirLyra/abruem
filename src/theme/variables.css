@@ -1,2 +1,9 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
+:root {
+    --ion-color-custom-blue: #324ca6;
+    --ion-color-custom-yellow: #edd662;
+    --ion-color-custom-green: #afbf30;
+    --ion-color-custom-orange-light: #f29f05;
+    --ion-color-custom-orange: #f27405;
+    --ion-color-custom-red: #8c0303;
+    --ion-color-custom-brown: #8d541d;
+}

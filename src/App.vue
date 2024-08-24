@@ -1,233 +1,253 @@
 <template>
-  <ion-app>
-    <ion-split-pane content-id="main-content">
-      <ion-menu content-id="main-content" type="overlay">
-        <ion-content>
-          <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
-            <ion-note>hi@ionicframework.com</ion-note>
+    <ion-page>
+        <ion-header>
+            <ion-toolbar class="custom-toolbar">
+                <ion-title class="header-title">ABRUEM 2024</ion-title>
+            </ion-toolbar>
+        </ion-header>
 
-            <ion-menu-toggle :auto-hide="false" v-for="(p, i) in appPages" :key="i">
-              <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" :detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
-                <ion-icon aria-hidden="true" slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
-                <ion-label>{{ p.title }}</ion-label>
-              </ion-item>
-            </ion-menu-toggle>
-          </ion-list>
+        <ion-content class="custom-content">
+            <ion-img src="../resources/assets-abruem/slide_01.png"
+                class="main-image"></ion-img>
 
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
+            <div class="custom-divider">Informações do Evento</div>
 
-            <ion-item v-for="(label, index) in labels" lines="none" :key="index">
-              <ion-icon aria-hidden="true" slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          </ion-list>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12"
+                        size-md="6">
+                        <ion-card class="custom-card">
+                            <ion-img src="../resources/assets-abruem/elements/icon8.jpeg"
+                                class="card-image"></ion-img>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button blue"
+                                    @click="openLink('https://link-para-inscricao')">
+                                    Inscrição
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size="12"
+                        size-md="6">
+                        <ion-card class="custom-card">
+                            <ion-img src="../resources/assets-abruem/elements/icon4.jpeg"
+                                class="card-image"></ion-img>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button yellow"
+                                    @click="openLink('https://link-para-guia')">
+                                    Guia de Apoio ao Participante
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="12"
+                        size-md="6">
+                        <ion-card class="custom-card">
+                            <ion-img src="../resources/assets-abruem/elements/icon6.jpeg"
+                                class="card-image"></ion-img>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button green"
+                                    @click="openLink('https://link-para-programacao')">
+                                    Programação
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size="12"
+                        size-md="6">
+                        <ion-card class="custom-card">
+                            <ion-img src="../resources/assets-abruem/elements/icon5.jpeg"
+                                class="card-image"></ion-img>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button yellow-light"
+                                    @click="openLink('https://link-para-site')">
+                                    Site do Evento
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-footer class="custom-footer">
+                <ion-toolbar class="footer-toolbar">
+                    <div class="footer-content">
+                        <p>© 2024 ABRUEM - Todos os direitos reservados.</p>
+                        <!-- <div class="footer-links">
+                            <ion-button fill="clear"
+                                class="footer-link"
+                                @click="openLink('https://link-para-termos')">Termos de Uso</ion-button>
+                            <ion-button fill="clear"
+                                class="footer-link"
+                                @click="openLink('https://link-para-privacidade')">Política de Privacidade</ion-button>
+                        </div> -->
+                    </div>
+                </ion-toolbar>
+            </ion-footer>
         </ion-content>
-      </ion-menu>
-      <ion-router-outlet id="main-content"></ion-router-outlet>
-    </ion-split-pane>
-  </ion-app>
+    </ion-page>
 </template>
 
-<script setup lang="ts">
-import {
-  IonApp,
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonNote,
-  IonRouterOutlet,
-  IonSplitPane,
-} from '@ionic/vue';
-import { ref } from 'vue';
-import {
-  archiveOutline,
-  archiveSharp,
-  bookmarkOutline,
-  bookmarkSharp,
-  heartOutline,
-  heartSharp,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
-} from 'ionicons/icons';
-
-const selectedIndex = ref(0);
-const appPages = [
-  {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp,
-  },
-  {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
-  },
-  {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
-  },
-  {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
-  },
-  {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp,
-  },
-  {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp,
-  },
-];
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
-const path = window.location.pathname.split('folder/')[1];
-if (path !== undefined) {
-  selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
+<script>
+export default {
+    methods: {
+        openLink(url) {
+            window.open(url, '_blank');
+        }
+    }
 }
 </script>
 
 <style scoped>
-ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+.custom-toolbar {
+    --background: #324ca6;
+    /* Cor azul */
 }
 
-ion-menu.md ion-content {
-  --padding-start: 8px;
-  --padding-end: 8px;
-  --padding-top: 20px;
-  --padding-bottom: 20px;
+.header-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
 }
 
-ion-menu.md ion-list {
-  padding: 20px 0;
+.custom-content {
+    --background: #f29f05;
+    /* Cor laranja clara */
 }
 
-ion-menu.md ion-note {
-  margin-bottom: 30px;
+.main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-ion-menu.md ion-list-header,
-ion-menu.md ion-note {
-  padding-left: 10px;
+.custom-card {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+    --background: #ffffff;
 }
 
-ion-menu.md ion-list#inbox-list {
-  border-bottom: 1px solid var(--ion-background-color-step-150, #d7d8da);
+.custom-card:hover {
+    transform: scale(1.05);
 }
 
-ion-menu.md ion-list#inbox-list ion-list-header {
-  font-size: 22px;
-  font-weight: 600;
-
-  min-height: 20px;
+.card-image {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    display: block;
 }
 
-ion-menu.md ion-list#labels-list ion-list-header {
-  font-size: 16px;
-
-  margin-bottom: 18px;
-
-  color: #757575;
-
-  min-height: 26px;
+.custom-button {
+    margin-top: 10px;
+    font-weight: bold;
+    --border-radius: 8px;
 }
 
-ion-menu.md ion-item {
-  --padding-start: 10px;
-  --padding-end: 10px;
-  border-radius: 4px;
+.custom-button.blue {
+    --background: #324ca6;
+    --color: white;
 }
 
-ion-menu.md ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+.custom-button.yellow {
+    --background: #edd662;
+    --color: black;
 }
 
-ion-menu.md ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+.custom-button.green {
+    --background: #afbf30;
+    --color: white;
 }
 
-ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+.custom-button.yellow-light {
+    --background: #f2cb05;
+    --color: black;
 }
 
-ion-menu.md ion-item ion-label {
-  font-weight: 500;
+.custom-divider {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #324ca6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-ion-menu.ios ion-content {
-  --padding-bottom: 20px;
+.custom-divider:before,
+.custom-divider:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 2px;
+    background-color: #324ca6;
 }
 
-ion-menu.ios ion-list {
-  padding: 20px 0 0 0;
+.custom-divider:before {
+    left: 5%;
 }
 
-ion-menu.ios ion-note {
-  line-height: 24px;
-  margin-bottom: 20px;
+.custom-divider:after {
+    right: 5%;
 }
 
-ion-menu.ios ion-item {
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --min-height: 50px;
+@media (max-width: 600px) {
+
+    .custom-divider:before,
+    .custom-divider:after {
+        width: 20%;
+    }
+
+    .custom-divider {
+        font-size: 18px;
+    }
 }
 
-ion-menu.ios ion-item.selected ion-icon {
-  color: var(--ion-color-primary);
+/* Estilos do Footer */
+.custom-footer {
+    --background: #324ca6;
+    margin-top: 20px;
+    padding: 20px 0;
 }
 
-ion-menu.ios ion-item ion-icon {
-  font-size: 24px;
-  color: #73849a;
+.footer-toolbar {
+    --background: transparent;
 }
 
-ion-menu.ios ion-list#labels-list ion-list-header {
-  margin-bottom: 8px;
+.footer-content {
+    text-align: center;
+    color: white;
 }
 
-ion-menu.ios ion-list-header,
-ion-menu.ios ion-note {
-  padding-left: 16px;
-  padding-right: 16px;
+.footer-links {
+    margin-top: 10px;
 }
 
-ion-menu.ios ion-note {
-  margin-bottom: 8px;
+.footer-link {
+    color: white;
+    font-size: 14px;
+    margin: 5px 10px;
+    --background: rgba(255, 255, 255, 0.2);
+    --color: white;
+    --border-radius: 5px;
+    padding: 5px 10px;
 }
 
-ion-note {
-  display: inline-block;
-  font-size: 16px;
-
-  color: var(--ion-color-medium-shade);
-}
-
-ion-item.selected {
-  --color: var(--ion-color-primary);
+.footer-link:hover {
+    --background: rgba(255, 255, 255, 0.3);
 }
 </style>
