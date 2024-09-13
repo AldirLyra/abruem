@@ -25,7 +25,7 @@
                         <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon8.jpeg')">
                             <div class="icon-container">
-                                <ion-icon name="person-outline"
+                                <ion-icon src="../resources/assets-abruem/icons/sign-in-alt-svgrepo-com.svg"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -42,7 +42,7 @@
                         <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon4.jpeg')">
                             <div class="icon-container">
-                                <ion-icon name="book-outline"
+                                <ion-icon src="../resources/assets-abruem/icons/chat-support-svgrepo-com.svg"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -59,14 +59,14 @@
                         <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon6.jpeg')">
                             <div class="icon-container">
-                                <ion-icon name="calendar-outline"
+                                <ion-icon src="../resources/assets-abruem/icons/event-ext-svgrepo-com.svg"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
                                 <ion-button expand="block"
                                     class="custom-button green"
                                     @click="openLink('https://link-para-programacao')">
-                                    Programação do evento
+                                    Programação do Evento
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
@@ -76,14 +76,14 @@
                         <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon5.jpeg')">
                             <div class="icon-container">
-                                <ion-icon name="image-outline"
+                                <ion-icon src="../resources/assets-abruem/icons/photos-svgrepo-com.svg"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
                                 <ion-button expand="block"
                                     class="custom-button yellow-light"
                                     @click="openLink('https://link-para-site')">
-                                    Galeria de fotos
+                                    Galeria de Fotos
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
@@ -163,7 +163,6 @@ export default {
     margin: 5px 0;
 }
 
-/* Custom Divider */
 .custom-divider {
     text-align: center;
     margin: 20px 0;
