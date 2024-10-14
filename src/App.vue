@@ -54,6 +54,7 @@
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
+
                     <ion-col size="6"
                         size-md="3">
                         <ion-card class="redirect-card"
@@ -65,12 +66,13 @@
                             <ion-card-content>
                                 <ion-button expand="block"
                                     class="custom-button green"
-                                    @click="openLink('https://link-para-programacao')">
+                                    @click="openLink('https://drive.google.com/file/d/18L5L4IkJYb77bfY_XVsyDZPsBQP6v9bH/view?usp=drive_link')">
                                     Programação do Evento
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
+
                     <ion-col size="6"
                         size-md="3">
                         <ion-card class="redirect-card"
@@ -84,6 +86,24 @@
                                     class="custom-button yellow-light"
                                     @click="openLink('https://link-para-site')">
                                     Galeria de Fotos
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+
+                    <ion-col size="12"
+                        size-md="3">
+                        <ion-card class="redirect-card"
+                            style="background-image: url('../resources/assets-abruem/elements/icon1.jpeg')">
+                            <div class="icon-container">
+                                <ion-icon src="../resources/assets-abruem/icons/calculator-svgrepo-com.svg"
+                                    size="large"></ion-icon>
+                            </div>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button brown"
+                                    @click="openLink('https://forms.gle/ZczpskztomsGvY2T6')">
+                                    Logística
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
@@ -255,6 +275,11 @@ ion-button {
 
 .custom-button.yellow-light {
     --background: #f2cb05;
+    --color: white;
+}
+
+.custom-button.brown {
+    --background: #8d541d;
     --color: white;
 }
 
