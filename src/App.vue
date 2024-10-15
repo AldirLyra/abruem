@@ -48,7 +48,7 @@
                             <ion-card-content>
                                 <ion-button expand="block"
                                     class="custom-button yellow"
-                                    @click="openLink('https://link-para-guia')">
+                                    @click="openLink('https://drive.google.com/file/d/1ilP5DDruvKaxGGZ7EHT6SCu9W4uezM-8/view?usp=sharing')">
                                     Apoio ao Participante
                                 </ion-button>
                             </ion-card-content>
