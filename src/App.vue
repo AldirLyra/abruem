@@ -23,23 +23,6 @@
                     <ion-col size="6"
                         size-md="3">
                         <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon8.jpeg')">
-                            <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/sign-in-alt-svgrepo-com.svg"
-                                    size="large"></ion-icon>
-                            </div>
-                            <ion-card-content>
-                                <ion-button expand="block"
-                                    class="custom-button blue"
-                                    @click="openLink('https://link-para-inscricao')">
-                                    Inscrição
-                                </ion-button>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-col>
-                    <ion-col size="6"
-                        size-md="3">
-                        <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon4.jpeg')">
                             <div class="icon-container">
                                 <ion-icon src="../resources/assets-abruem/icons/chat-support-svgrepo-com.svg"
@@ -84,14 +67,32 @@
                             <ion-card-content>
                                 <ion-button expand="block"
                                     class="custom-button yellow-light"
-                                    @click="openLink('https://link-para-site')">
+                                    @click="openLink('https://drive.google.com/drive/folders/1TV_yaKCOAtAxyli_3MKXQmLSedO-uA_8?usp=sharing')">
                                     Galeria de Fotos
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
 
-                    <ion-col size="12"
+                    <ion-col size="6"
+                        size-md="3">
+                        <ion-card class="redirect-card"
+                            style="background-image: url('../resources/assets-abruem/elements/icon8.jpeg')">
+                            <div class="icon-container">
+                                <ion-icon src="../resources/assets-abruem/icons/calculator-svgrepo-com.svg"
+                                    size="large"></ion-icon>
+                            </div>
+                            <ion-card-content>
+                                <ion-button expand="block"
+                                    class="custom-button blue"
+                                    @click="openLink('https://forms.gle/ZczpskztomsGvY2T6')">
+                                    Logística
+                                </ion-button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+
+                    <!-- <ion-col size="12"
                         size-md="3">
                         <ion-card class="redirect-card"
                             style="background-image: url('../resources/assets-abruem/elements/icon1.jpeg')">
@@ -107,7 +108,7 @@
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
-                    </ion-col>
+                    </ion-col> -->
                 </ion-row>
             </ion-grid>
 
