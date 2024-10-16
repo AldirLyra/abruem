@@ -7,7 +7,8 @@
         </ion-header>
 
         <ion-content class="custom-content">
-            <ion-img src="../resources/assets-abruem/slide_04.png"
+            <!-- Importando a imagem diretamente do script -->
+            <ion-img :src="slideImage"
                 class="main-image"></ion-img>
 
             <ion-card class="info-card">
@@ -20,12 +21,13 @@
 
             <ion-grid>
                 <ion-row>
+                    <!-- Primeiro Card -->
                     <ion-col size="6"
                         size-md="3">
-                        <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon4.jpeg')">
+                        <ion-card :style="{ backgroundImage: `url(${icon4Image})` }"
+                            class="redirect-card">
                             <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/chat-support-svgrepo-com.svg"
+                                <ion-icon :src="chatSupportIcon"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -38,12 +40,13 @@
                         </ion-card>
                     </ion-col>
 
+                    <!-- Segundo Card -->
                     <ion-col size="6"
                         size-md="3">
-                        <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon6.jpeg')">
+                        <ion-card :style="{ backgroundImage: `url(${icon6Image})` }"
+                            class="redirect-card">
                             <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/event-ext-svgrepo-com.svg"
+                                <ion-icon :src="eventExtIcon"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -56,12 +59,13 @@
                         </ion-card>
                     </ion-col>
 
+                    <!-- Terceiro Card -->
                     <ion-col size="6"
                         size-md="3">
-                        <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon5.jpeg')">
+                        <ion-card :style="{ backgroundImage: `url(${icon5Image})` }"
+                            class="redirect-card">
                             <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/photos-svgrepo-com.svg"
+                                <ion-icon :src="photosIcon"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -74,12 +78,13 @@
                         </ion-card>
                     </ion-col>
 
+                    <!-- Quarto Card -->
                     <ion-col size="6"
                         size-md="3">
-                        <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon8.jpeg')">
+                        <ion-card :style="{ backgroundImage: `url(${icon8Image})` }"
+                            class="redirect-card">
                             <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/calculator-svgrepo-com.svg"
+                                <ion-icon :src="calculatorIcon"
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
@@ -91,24 +96,6 @@
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
-
-                    <!-- <ion-col size="12"
-                        size-md="3">
-                        <ion-card class="redirect-card"
-                            style="background-image: url('../resources/assets-abruem/elements/icon1.jpeg')">
-                            <div class="icon-container">
-                                <ion-icon src="../resources/assets-abruem/icons/calculator-svgrepo-com.svg"
-                                    size="large"></ion-icon>
-                            </div>
-                            <ion-card-content>
-                                <ion-button expand="block"
-                                    class="custom-button brown"
-                                    @click="openLink('https://forms.gle/ZczpskztomsGvY2T6')">
-                                    Logística
-                                </ion-button>
-                            </ion-card-content>
-                        </ion-card>
-                    </ion-col> -->
                 </ion-row>
             </ion-grid>
 
@@ -123,14 +110,38 @@
     </ion-page>
 </template>
 
+
 <script>
+import slideImage from '@/assets/assets-abruem/banner.png';
+import icon4Image from '@/assets/assets-abruem/elements/icon4.jpeg';
+import icon5Image from '@/assets/assets-abruem/elements/icon5.jpeg';
+import icon6Image from '@/assets/assets-abruem/elements/icon6.jpeg';
+import icon8Image from '@/assets/assets-abruem/elements/icon8.jpeg';
+import chatSupportIcon from '@/assets/assets-abruem/icons/chat-support-svgrepo-com.svg';
+import eventExtIcon from '@/assets/assets-abruem/icons/event-ext-svgrepo-com.svg';
+import photosIcon from '@/assets/assets-abruem/icons/photos-svgrepo-com.svg';
+import calculatorIcon from '@/assets/assets-abruem/icons/calculator-svgrepo-com.svg';
+
 export default {
+    data() {
+        return {
+            slideImage,
+            icon4Image,
+            icon5Image,
+            icon6Image,
+            icon8Image,
+            chatSupportIcon,
+            eventExtIcon,
+            photosIcon,
+            calculatorIcon,
+        };
+    },
     methods: {
         openLink(url) {
             window.open(url, '_blank');
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style scoped>
