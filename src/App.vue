@@ -8,8 +8,8 @@
 
         <ion-content class="custom-content">
             <!-- Importando a imagem diretamente do script -->
-            <ion-img :src="slideImage"
-                class="main-image"></ion-img>
+            <img :src="slideImage"
+                class="main-image" />
 
             <ion-card class="info-card">
                 <ion-card-content class="info-card-content">
@@ -30,11 +30,11 @@
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
-                                <ion-button expand="block"
+                                <button expand="block"
                                     class="custom-button yellow"
                                     @click="openLink('https://drive.google.com/file/d/1ilP5DDruvKaxGGZ7EHT6SCu9W4uezM-8/view?usp=sharing')">
                                     Apoio ao Participante
-                                </ion-button>
+                                </button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
@@ -49,11 +49,11 @@
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
-                                <ion-button expand="block"
+                                <button expand="block"
                                     class="custom-button green"
-                                    @click="openLink('https://drive.google.com/file/d/18L5L4IkJYb77bfY_XVsyDZPsBQP6v9bH/view?usp=drive_link')">
+                                    @click="openLink('https://drive.google.com/file/d/1zTtX__Wv3EZLkxoerjc1xFBFDaWFHyIw/view?usp=sharing')">
                                     Programação do Evento
-                                </ion-button>
+                                </button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
@@ -68,11 +68,11 @@
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
-                                <ion-button expand="block"
+                                <button expand="block"
                                     class="custom-button yellow-light"
                                     @click="openLink('https://drive.google.com/drive/folders/1TV_yaKCOAtAxyli_3MKXQmLSedO-uA_8?usp=sharing')">
                                     Galeria de Fotos
-                                </ion-button>
+                                </button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
@@ -87,11 +87,11 @@
                                     size="large"></ion-icon>
                             </div>
                             <ion-card-content>
-                                <ion-button expand="block"
+                                <button expand="block"
                                     class="custom-button blue"
                                     @click="openLink('https://forms.gle/ZczpskztomsGvY2T6')">
                                     Logística
-                                </ion-button>
+                                </button>
                             </ion-card-content>
                         </ion-card>
                     </ion-col>
@@ -254,7 +254,7 @@ ion-card-content {
     position: relative;
 }
 
-ion-button {
+button {
     font-weight: bold;
     white-space: normal;
     text-align: center;
@@ -270,28 +270,28 @@ ion-button {
 }
 
 .custom-button.blue {
-    --background: #324ca6;
-    --color: white;
+    background: #324ca6;
+    color: white;
 }
 
 .custom-button.yellow {
-    --background: #edd662;
-    --color: white;
+    background: #edd662;
+    color: white;
 }
 
 .custom-button.green {
-    --background: #afbf30;
-    --color: white;
+    background: #afbf30;
+    color: white;
 }
 
 .custom-button.yellow-light {
-    --background: #f2cb05;
-    --color: white;
+    background: #f2cb05;
+    color: white;
 }
 
 .custom-button.brown {
-    --background: #8d541d;
-    --color: white;
+    background: #8d541d;
+    color: white;
 }
 
 .custom-footer {
